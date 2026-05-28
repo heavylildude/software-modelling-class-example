@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Products{% endblock %}
+{% block content %}
+<h2>Product Master</h2>
+<a href="{{ url_for('product_new') }}" role="button">+ New Product</a>
+<br/><br/>
+
+<table>
+  <thead>
+    <tr>
+      <th>SKU</th>
+      <th>Category</th>
+      <th>Product Name</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for p in products %}
+    <tr>
+      <td><code>{{ p.sku }}</code></td>
+      <td>{{ p.category }}</td>
+      <td>{{ p.product_name }}</td>
+      <td>
+        <!-- url_for with a parameter — generates /products/edit/SKU123 -->
+        <a href="{{ url_for('product_edit', sku=p.sku) }}">Edit</a>
+      </td>
+    </tr>
+    {% else %}
+    <tr><td colspan="4">No products found.</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

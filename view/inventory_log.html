@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Inventory Log{% endblock %}
+{% block content %}
+<h2>Movement Log</h2>
+<p>Complete history of all stock in/out movements.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Timestamp</th>
+      <th>SKU</th>
+      <th>Product</th>
+      <th>Type</th>
+      <th>Qty</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for log in logs %}
+    <tr>
+      <td>{{ log.id }}</td>
+      <td><small>{{ log.created_at }}</small></td>
+      <td><code>{{ log.sku }}</code></td>
+      <td>{{ log.product_name }}</td>
+      <!-- Show different styling for IN vs OUT -->
+      <td>
+        {% if log.movement_type == 'IN' %}
+          <ins>IN</ins>
+        {% else %}
+          <del>OUT</del>
+        {% endif %}
+      </td>
+      <td>{{ log.qty }}</td>
+      <td><small>{{ log.notes or '—' }}</small></td>
+    </tr>
+    {% else %}
+    <tr><td colspan="7">No movements recorded yet.</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

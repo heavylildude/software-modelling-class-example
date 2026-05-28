@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}{{ action }} Product{% endblock %}
+{% block content %}
+<h2>{{ action }} Product</h2>
+
+<!-- action="" posts to the current URL (works for both /new and /edit/<sku>) -->
+<form method="POST" action="">
+  <label for="sku">
+    SKU
+    <!-- If editing, SKU is read-only — can't change a primary key -->
+    <input type="text" id="sku" name="sku"
+           value="{{ product.sku if product else '' }}"
+           {{ 'readonly' if product else '' }}
+           placeholder="e.g. PROD-001" required />
+  </label>
+
+  <label for="category">
+    Category
+    <input type="text" id="category" name="category"
+           value="{{ product.category if product else '' }}"
+           placeholder="e.g. Electronics" required />
+  </label>
+
+  <label for="product_name">
+    Product Name
+    <input type="text" id="product_name" name="product_name"
+           value="{{ product.product_name if product else '' }}"
+           placeholder="e.g. USB-C Cable 1m" required />
+  </label>
+
+  <button type="submit">{{ action }} Product</button>
+  <a href="{{ url_for('product_list') }}" role="button" class="secondary">Cancel</a>
+</form>
+{% endblock %}

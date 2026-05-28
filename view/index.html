@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<h2>Dashboard</h2>
+
+<!-- we use pico no need css class -->
+<table>
+  <thead>
+    <tr>
+      <th>SKU</th>
+      <th>Category</th>
+      <th>Product Name</th>
+      <th>Qty On Hand</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in inventory %}
+    <tr>
+      <td><code>{{ row.sku }}</code></td>
+      <td>{{ row.category }}</td>
+      <td>{{ row.product_name }}</td>
+      <!-- Highlight low stock visually -->
+      <td>
+        {% if row.qty_on_hand == 0 %}
+          <ins>0 — OUT OF STOCK</ins>
+        {% else %}
+          {{ row.qty_on_hand }}
+        {% endif %}
+      </td>
+    </tr>
+    {% else %}
+    <tr><td colspan="4">No products yet. <a href="{{ url_for('product_new') }}">Add one!</a></td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<a href="{{ url_for('inventory_move') }}" role="button">➕ Move Stock</a>
+{% endblock %}

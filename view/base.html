@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Pico CSS — classless CSS framework, just use semantic HTML -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+  <title>{% block title %}Inventory App{% endblock %}</title>
+</head>
+<body>
+
+  <header class="container">
+    <nav>
+      <ul>
+        <li><strong>Inventory</strong></li>
+      </ul>
+      <ul>
+        <li><a href="{{ url_for('index') }}">Dashboard</a></li>
+        <li><a href="{{ url_for('product_list') }}">Products</a></li>
+        <li><a href="{{ url_for('inventory_move') }}">Move Stock</a></li>
+        <li><a href="{{ url_for('inventory_log') }}">Log</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- Flash messages — shown once, then gone -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <!-- Pico uses <mark> for highlights; we improvise a simple alert -->
+          <p><mark>{{ "✅" if category == "success" else "⚠️" }} {{ message }}</mark></p>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <!-- Each child template fills in this block -->
+    {% block content %}{% endblock %}
+  </main>
+
+</body>
+</html>

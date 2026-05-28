@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Move Stock{% endblock %}
+{% block content %}
+<h2>Stock In/out</h2>
+
+<form method="POST" action="">
+  <label for="sku">
+    Product (SKU)
+    <!-- Dropdown populated from the products list passed by the controller -->
+    <select id="sku" name="sku" required>
+      <option value="" disabled selected>— Select a product —</option>
+      {% for p in products %}
+        <option value="{{ p.sku }}">{{ p.sku }} — {{ p.product_name }}</option>
+      {% endfor %}
+    </select>
+  </label>
+
+  <label for="movement_type">
+    Movement Type
+    <select id="movement_type" name="movement_type" required>
+      <option value="IN">➕ IN — Add stock</option>
+      <option value="OUT">➖ OUT — Remove stock</option>
+    </select>
+  </label>
+
+  <label for="qty">
+    Quantity
+    <input type="number" id="qty" name="qty" min="1" placeholder="e.g. 10" required />
+  </label>
+
+  <label for="notes">
+    Notes (optional)
+    <textarea id="notes" name="notes" placeholder="e.g. Received from supplier ABC, PO#12345"></textarea>
+  </label>
+
+  <button type="submit">Submit</button>
+  <a href="{{ url_for('index') }}" role="button" class="secondary">Cancel</a>
+</form>
+{% endblock %}
