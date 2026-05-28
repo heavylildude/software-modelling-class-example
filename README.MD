@@ -1,4 +1,5 @@
-# 📦 Inventory Management System — Intro to Software Modelling
+# 📦 Inventory Management System  
+## Python Flask Example for Software Spec & Modelling Class
 
 > "A simple Flask inventory app used as a teaching example for understanding
 > the **Model-View-Controller (MVC)** software architecture. Yes, it's simple.
