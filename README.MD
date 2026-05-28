@@ -291,4 +291,4 @@ The database file `inventory.db` is created automatically. Delete it and restart
 
 > "If you understood this README, you understand 80% of what any app does. The rest is just fancier look and slightly fancier database. Now go build something."  
 >  
-> — Maggie, probably, while drinking coffee.
+> — Magnus, probably, while drinking coffee.
