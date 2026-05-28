@@ -1,4 +1,4 @@
-# 📦 Inventory Management System  
+# Inventory Management System  
 ## Python Flask Example for Software Spec & Modelling Class
 
 > "A simple Flask inventory app used as a teaching example for understanding
@@ -7,7 +7,7 @@
 
 ---
 
-## 🚀 Quick Start (Run It In 10 Seconds)
+## Quick Start (Run It In 10 Seconds)
 
 Open your terminal/command prompt and type these two lines:
 
@@ -22,7 +22,7 @@ That's it. You're done. You're now a software engineer. 🎉
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 app.py                      >> The brain of the app (Model + Controller + DB)
@@ -38,7 +38,7 @@ inventory.db                >> Your SQLite database (auto-created, don't delete)
 
 ---
 
-## 🧱 Architecture: Model-View-Controller (MVC)
+## Architecture: Model-View-Controller (MVC)
 
 Think of MVC like a **restaurant**. It's not that complicated.
 
@@ -71,7 +71,7 @@ User clicks "Move Stock"
 
 ---
 
-## 🗂️ MODEL — The Data Guys
+## MODEL — The Data Guys
 
 There are **three model classes**. Each one handles one table in the database.
 
@@ -117,7 +117,7 @@ Keeps a permanent record of every stock movement. Never updated. Never deleted. 
 
 ---
 
-## 🌐 CONTROLLER — The Runner
+## CONTROLLER — The Runner
 
 The controller is the middleman. In `app.py`, every route handler (a function decorated with `@app.route`) is a **controller action**.
 
@@ -148,7 +148,7 @@ Flask figures this out using `request.method`.
 
 ---
 
-## 🎨 VIEW — The Face
+## VIEW — The Face
 
 All views live in the `view/` folder. They're written in **HTML + Jinja2 templating**.
 
@@ -196,7 +196,7 @@ Every other template `extends` it and only fills in the `{% block content %}` pa
 
 ---
 
-## 📊 Database Schema (SQLite)
+## Database Schema (SQLite)
 
 Your data lives in `inventory.db` — a single file database. No setup needed.
 
@@ -229,7 +229,7 @@ Your data lives in `inventory.db` — a single file database. No setup needed.
 
 ---
 
-## 🔄 Design Patterns & Key Concepts
+## Design Patterns & Key Concepts
 
 | Pattern / Concept        | Where It Shows Up                                | Why It Matters                                         |
 |-------------------------|---------------------------------------------------|---------------------------------------------------------|
@@ -245,7 +245,7 @@ Your data lives in `inventory.db` — a single file database. No setup needed.
 
 ---
 
-## 🧪 Validation Logic (Because Users Are Chaotic)
+## Validation Logic (Because Users Are Chaotic)
 
 The app doesn't trust user input. Here's what gets checked:
 
@@ -257,7 +257,7 @@ The app doesn't trust user input. Here's what gets checked:
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Technology      | Purpose                                        |
 |----------------|-------------------------------------------------|
@@ -269,7 +269,7 @@ The app doesn't trust user input. Here's what gets checked:
 
 ---
 
-## 📝 Running Notes
+## Running Notes
 
 ```bash
 # Install dependencies
@@ -287,7 +287,7 @@ The database file `inventory.db` is created automatically. Delete it and restart
 
 ---
 
-# Notes  
+## Final notes  
 
-"If you understood this README, you understand 80% of what any web app does. The rest is just more HTML and slightly fancier SQL. Now go build something." 
+"If you understood this README, you understand 80% of what any app does. The rest is just fancier look and slightly fancier database. Now go build something." 
 — Maggie, probably, while drinking coffee.
