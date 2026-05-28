@@ -25,15 +25,15 @@ That's it. You're done. You're now a software engineer. 🎉
 ## 📂 Project Structure
 
 ```
-app.py              → The brain of the app (Model + Controller + DB)
+app.py                      >> The brain of the app (Model + Controller + DB)
 view/
-  ├── base.html     → The shared layout (header, nav, footer)
-  ├── index.html    → Dashboard page (see stock levels at a glance)
-  ├── products.html → Product catalogue (list all products)
-  ├── product_form.html → New / Edit product form
-  ├── inventory_move.html  → Move stock IN or OUT
-  └── inventory_log.html   → History of every stock movement
-inventory.db        → Your SQLite database (auto-created, don't delete)
+  ├── base.html             >> The shared layout (header, nav, footer)
+  ├── index.html            >> Dashboard page (see stock levels at a glance)
+  ├── products.html         >> Product catalogue (list all products)
+  ├── product_form.html     >> New / Edit product form
+  ├── inventory_move.html   >> Move stock IN or OUT
+  └── inventory_log.html    >> History of every stock movement
+inventory.db                >> Your SQLite database (auto-created, don't delete)
 ```
 
 ---
