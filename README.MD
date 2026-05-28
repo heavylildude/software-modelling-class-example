@@ -71,7 +71,7 @@ User clicks "Move Stock"
 
 ---
 
-## 🗂️ Model Layer — The Data Guys
+## 🗂️ MODEL — The Data Guys
 
 There are **three model classes**. Each one handles one table in the database.
 
@@ -117,7 +117,7 @@ Keeps a permanent record of every stock movement. Never updated. Never deleted. 
 
 ---
 
-## 🌐 Controller Layer — The Waiters
+## 🌐 CONTROLLER — The Runner
 
 The controller is the middleman. In `app.py`, every route handler (a function decorated with `@app.route`) is a **controller action**.
 
@@ -148,7 +148,7 @@ Flask figures this out using `request.method`.
 
 ---
 
-## 🎨 View Layer — The Pretty Face
+## 🎨 VIEW — The Face
 
 All views live in the `view/` folder. They're written in **HTML + Jinja2 templating**.
 
