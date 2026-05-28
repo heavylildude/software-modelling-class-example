@@ -38,7 +38,7 @@ inventory.db                >> Your SQLite database (auto-created, don't delete)
 
 ---
 
-## 🧱 Architecture: Model-View-Controller (MVC) Explained Like You're Brilliant (Because You Are)
+## 🧱 Architecture: Model-View-Controller (MVC)
 
 Think of MVC like a **restaurant**. It's not that complicated.
 
